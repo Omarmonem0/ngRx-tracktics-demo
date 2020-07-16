@@ -6,6 +6,13 @@
   <div *ngIf="success" class="alert alert-success" role="alert">
     Piches retrieved successfully!
   </div>
+  <div *ngIf="success">
+    <ul>
+      <li *ngFor="let pitch of pitches">
+        {{pitch.pitchId}}
+      </li>
+    </ul>
+  </div>
   <div *ngIf= "fail" class="alert alert-danger" role="alert">
     An error occured!
   </div>

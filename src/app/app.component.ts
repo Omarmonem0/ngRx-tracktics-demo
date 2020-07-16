@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'demo';
   public success = false;
   public fail = false;
+  public pitches = [];
 
   constructor(private store: Store<fromApp.AppState>) { }
 
@@ -21,6 +22,7 @@ export class AppComponent {
     this.store.select(fromApp.selectPitches).subscribe(data => {
       if (data) {
         this.success = true;
+        this.pitches = data;
       }
     });
   }
